@@ -2,11 +2,7 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 const Example = () => {
-  return (
-
-        <HorizontalCarousel />
-
-  );
+  return <HorizontalCarousel />;
 };
 
 const HorizontalCarousel = () => {
@@ -15,11 +11,12 @@ const HorizontalCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["55%", "-95%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <h1 className="text-5xl pl-12 font-light tracking-widest text-nowrap uppercase">our brands</h1>
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
@@ -32,24 +29,30 @@ const HorizontalCarousel = () => {
 
 const Card = ({ card }: { card: CardType }) => {
   return (
-    <div
+    <motion.div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
+      className="duration-300 overflow-hidden group relative h-[450px] w-[450px] bg-neutral-950 saturate-0 transition-all hover:saturate-100"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      whileHover={{ scale: 1.02 }}
     >
-      <div
+      <motion.div
         style={{
           backgroundImage: `url(${card.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
+        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-105"
+      ></motion.div>
+      <div className="absolute inset-0 z-10 grid place-content-center backdrop-blur-2xl hover:backdrop-blur-none transition-all duration-300">
+        <motion.p
+          className="p-8 text-6xl uppercase text-white transition-opacity duration-300 group-hover:opacity-0"
+        >
           {card.title}
-        </p>
+        </motion.p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -63,38 +66,33 @@ type CardType = {
 
 const cards: CardType[] = [
   {
-    url: "/imgs/abstract/1.jpg",
-    title: "Title 1",
+    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+    title: "Yamaha",
     id: 1,
   },
   {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
+    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+    title: "Honda",
     id: 2,
   },
+
   {
-    url: "/imgs/abstract/3.jpg",
-    title: "Title 3",
+    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+    title: "Kawasaki",
     id: 3,
   },
+
   {
-    url: "/imgs/abstract/4.jpg",
-    title: "Title 4",
+    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+    title: "BMW",
     id: 4,
   },
+
   {
-    url: "/imgs/abstract/5.jpg",
-    title: "Title 5",
+    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+    title: "Ducati",
     id: 5,
   },
-  {
-    url: "/imgs/abstract/6.jpg",
-    title: "Title 6",
-    id: 6,
-  },
-  {
-    url: "/imgs/abstract/7.jpg",
-    title: "Title 7",
-    id: 7,
-  },
+
+
 ];
