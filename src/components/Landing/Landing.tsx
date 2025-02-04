@@ -9,7 +9,7 @@ const letterVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function HeroSection(props: { title: string; url: string }) {
+export default function HeroSection(props: { title: string; url?: string }) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -23,10 +23,11 @@ export default function HeroSection(props: { title: string; url: string }) {
         loop
         muted
         playsInline
-        src="/medias/ducati.mp4"
-        className="absolute h-full w-full scale-150 object-fill opacity-50"
+        src={props.url}
+        className="absolute h-full w-full object-cover opacity-50"
       ></video>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#000000] opacity-100"></div>
+
       <div className="relative z-10 space-y-6 text-center">
         <motion.h1 className="text-6xl font-extralight tracking-widest text-white md:text-8xl">
           {props.title.split("").map((char, index) => (
