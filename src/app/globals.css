@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer base {
+  :root {
+    --background: 50 100% 0%; /* Darker background for depth */
+    --foreground: 0 0% 92%; /* Lighter foreground to contrast the dark */
+    --card: 240 10% 12%; /* Slightly lighter card for separation */
+    --card-foreground: 0 0% 90%; /* Muted text for cards */
+    --popover: 240 10% 12%; /* Same as card for consistency */
+    --popover-foreground: 0 0% 90%; /* Muted foreground */
+    --primary: 0 0% 95%; /* Soft highlight for primary elements */
+    --primary-foreground: 240 5.9% 10%; /* Deep dark accent for primary text */
+    --secondary: 240 3.7% 18%; /* Darker secondary for more contrast */
+    --secondary-foreground: 0 0% 92%; /* Soft secondary text */
+    --muted: 240 3.7% 18%; /* Muted tone darker for a rich feel */
+    --muted-foreground: 240 5% 60%; /* A soft medium gray */
+    --accent: 240 3.7% 18%; /* Darker accent for more luxurious look */
+    --accent-foreground: 0 0% 92%; /* Muted bright accents */
+    --destructive: 0 60% 30%; /* Red with a more intense, bold look */
+    --destructive-foreground: 0 0% 92%; /* Light text on destructive actions */
+    --border: 240 3.7% 18%; /* Dark border for separation */
+    --input: 240 3.7% 18%; /* Input fields to blend into dark mode */
+    --ring: 240 4.9% 60%; /* Subtle ring effect for focus states */
+    --chart-1: 220 70% 40%; /* Darker blue tones for chart accents */
+    --chart-2: 160 60% 40%; /* Muted green for balance */
+    --chart-3: 30 80% 45%; /* Burnt orange for a warm contrast */
+    --chart-4: 280 65% 50%; /* Deep purple for a luxurious feel */
+    --chart-5: 340 75% 50%; /* Bold red for striking chart accents */
+
+    --radius: 0rem;
+    --font-montserrat: "Montserrat", sans-serif;
+  }
+
+  * {
+    font-family: var(--font-montserrat);
+    @apply border-border;
+    @apply no-scrollbar;
+  }
+
+  html,
+  body {
+    @apply no-scrollbar;
+  }
+
+  body {
+    font-family: var(--font-montserrat);
+    @apply bg-background text-foreground;
+  }
+
+  .container {
+    @apply mx-auto max-w-7xl px-4;
+  }
+
+  .btn {
+    @apply rounded bg-white p-2 text-black;
+  }
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.animate-move {
+  animation: move 
+}
