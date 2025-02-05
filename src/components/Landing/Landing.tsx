@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import EncryptButton from "../ui/encrypt-button";
+import Image from "next/image";
 
 const letterVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -46,7 +47,7 @@ export default function HeroSection(props: { title: string; url?: string }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="text-xl font-light tracking-wide text-gray-300 md:text-2xl"
+          className="text-xl font-normal tracking-wide text-gray-300 md:text-2xl"
         >
           Unleash the Power of Luxury
         </motion.p>
@@ -55,15 +56,17 @@ export default function HeroSection(props: { title: string; url?: string }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
           transition={{ duration: 1, delay: 2.0 }}
-          className="text-lg font-light tracking-wide text-gray-400 md:text-xl"
+          className="text-lg font-normal tracking-wide text-neutral-300 md:text-xl"
         >
           Explore our collection and find your perfect ride today.
         </motion.p>
         <EncryptButton initialText="DISCOVER"  />
-        <i className="c-scroll-indicator">
-          <i></i>
-        </i>
+
+
       </div>
+      <div className="absolute top-[90%] z-20 text-center w-full">
+          <Image src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHKB4EqqgYqsOARCblfHXPUk09yzTEgadiQGhF" className="mx-auto" unoptimized alt="scroll"  width={35} height={70} />
+        </div>
     </section>
   );
 }

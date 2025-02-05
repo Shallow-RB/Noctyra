@@ -14,7 +14,7 @@ const HorizontalCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["55%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[300vh] bg-gradient-to-b from-black to-white">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <h1 className="text-5xl pl-12 font-light tracking-widest text-nowrap uppercase">our brands</h1>
         <motion.div style={{ x }} className="flex gap-4">

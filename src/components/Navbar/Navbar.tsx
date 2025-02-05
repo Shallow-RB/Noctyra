@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { SvgIcon } from "./SvgIcon";
+import { useScramble } from "../../hooks/useScramble";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -125,16 +126,24 @@ function NavLink({
   index: number;
   delay: number;
 }) {
+  const { text, scramble, stopScramble } = useScramble(children as string);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.1, delay }}
-      className="group relative text-6xl font-light uppercase tracking-wider"
+      transition={{ duration: 0.3, delay, ease:"easeInOut" }}
+      onMouseEnter={scramble}
+      onMouseLeave={stopScramble}
+      className="group relative text-6xl font-light text-neutral-400 uppercase tracking-wider w-full text-center"
     >
-      <Link href={href} onClick={onClick} className="relative z-10">
-        <motion.span className="z-10 group-hover:text-white">
-          {children}
+      <Link
+        href={href}
+        onClick={onClick}
+        className="relative z-10 w-full text-center"
+      >
+        <motion.span className="z-10 group-hover:text-white transition-colors duration-300 ease-in-out w-full text-center">
+          {text}
         </motion.span>
       </Link>
     </motion.div>
