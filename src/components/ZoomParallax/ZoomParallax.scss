@@ -1,0 +1,76 @@
+.zoom-container {
+  height: 300vh;
+  position: relative;
+  background-color: white;
+
+  .sticky {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .el {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .imageContainer {
+      width: 25vw;
+      height: 25vh;
+      position: relative;
+      .img {
+        object-fit: cover;
+      }
+    }
+    &:nth-of-type(2) {
+      .imageContainer {
+        top: -30vh;
+        left: 2.5vw;
+        height: 30vh;
+        width: 30vw;
+      }
+    }
+    &:nth-of-type(3) {
+      .imageContainer {
+        top: 20vh;
+        left: -25vw;
+        height: 20vh;
+        width: 20vw;
+      }
+    }
+
+    &:nth-of-type(4) {
+      .imageContainer {
+        top: 25vh;
+        left: 15vw;
+        height: 20vh;
+        width: 50vw;
+      }
+    }
+    &:nth-of-type(5) {
+      .imageContainer {
+        top: -30vh;
+        left: -30vw;
+        height: 20vh;
+        width: 20vw;
+        aspect-ratio: 1/1;
+      }
+    }
+    &:nth-of-type(6) {
+      .imageContainer {
+        top: 0vh;
+        left: 25vw;
+        height: 20vh;
+        width: 20vw;
+      }
+    }
+  }
+
+
+
+}

@@ -5,7 +5,7 @@ import {
   useTransform,
 } from "framer-motion";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export const SmoothScrollHero = () => {
   return (
@@ -32,6 +32,7 @@ const Hero = () => {
 
 const CenterVideo = () => {
   const { scrollY } = useScroll();
+  const [videoInView, setVideoInView] = useState(false);
 
   const clip1 = useTransform(scrollY, [0, 2500], [25, 0]);
   const clip2 = useTransform(scrollY, [0, 2500], [75, 100]);
@@ -44,18 +45,39 @@ const CenterVideo = () => {
     [1, 0],
   );
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const videoElement = document.querySelector("video");
+      if (videoElement) {
+        const rect = videoElement.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          setVideoInView(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <motion.video
-      className="sticky top-0 h-screen w-full object-cover"
-      style={{
-        clipPath,
-        opacity,
-      }}
-      src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxnVnu3H5c9JSiRTPpHOIu5ytfakXLs61eElh" // Replace with your video URL
-      autoPlay
-      loop
-      muted
-    />
+    videoInView && (
+      <motion.video
+        className="sticky top-0 h-screen w-full object-cover"
+        style={{
+          clipPath,
+          opacity,
+        }}
+        src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxnVnu3H5c9JSiRTPpHOIu5ytfakXLs61eElh" // Replace with your video URL
+        autoPlay
+        loop
+        muted
+      />
+    )
   );
 };
 
@@ -94,7 +116,6 @@ const ParallaxImages = () => {
           className="relative z-20 text-end text-3xl font-light uppercase tracking-widest"
         >
           <AnimatedText text="Experience the Thrill of the Ride" />
-
         </motion.div>
         <ParallaxImg
           src="https://wallpapersok.com/images/hd/ultra-hd-matte-black-motorcycle-fv1506u417lapcak.jpg"
@@ -107,7 +128,6 @@ const ParallaxImages = () => {
           className="relative z-20 text-start text-3xl uppercase text-white"
         >
           <AnimatedText text="Discover our exclusive range of motorcycles" />
-
         </motion.div>
         <ParallaxImg
           src="https://wallpapercat.com/w/full/5/9/9/1739947-2999x1996-desktop-hd-kawasaki-ninja-h2-wallpaper-photo.jpg"
@@ -169,6 +189,7 @@ const ParallaxImg = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
+      loading="lazy"
     />
   );
 };

@@ -6,6 +6,8 @@ import { SmoothScrollHero } from "~/components/SmoothScrollHero/SmoothScrollHero
 import Landing from "~/components/Landing/Landing";
 import HorizontalCarousel from "~/components/Carousel/HorizontalCarousel";
 import { TextReveal } from "~/components/TextReveal/TextReveal";
+import ZoomParallax from "~/components/ZoomParallax/ZoomParallax";
+import InfiniteText from "~/components/InfiniteText/InfiniteText";
 
 export default function HomePage() {
   useEffect(() => {
@@ -52,6 +54,8 @@ export default function HomePage() {
           />
         </div>
       </div>
+      <InfiniteText>GALLERY //&nbsp;</InfiniteText>
+      <ZoomParallax />
     </div>
   );
 }
