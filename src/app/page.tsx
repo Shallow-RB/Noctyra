@@ -9,7 +9,6 @@ import { TextReveal } from "~/components/TextReveal/TextReveal";
 import ZoomParallax from "~/components/ZoomParallax/ZoomParallax";
 import InfiniteText from "~/components/InfiniteText/InfiniteText";
 import { TracingBeam } from "~/components/ui/tracing-beam";
-import StickyCursor from "~/components/StickyCursor/StickyCursor";
 
 export default function HomePage() {
   useEffect(() => {
