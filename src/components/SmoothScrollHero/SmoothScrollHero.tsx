@@ -72,7 +72,7 @@ const CenterVideo = () => {
           clipPath,
           opacity,
         }}
-        src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxnVnu3H5c9JSiRTPpHOIu5ytfakXLs61eElh" // Replace with your video URL
+        src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxnVnu3H5c9JSiRTPpHOIu5ytfakXLs61eElh"
         autoPlay
         loop
         muted
