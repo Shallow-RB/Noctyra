@@ -10,7 +10,7 @@ const letterVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function HeroSection(props: { title: string; url?: string }) {
+export default function HeroSection(props: { title: string; url?: string, header?: string, description?: string }) {
   const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -63,8 +63,9 @@ export default function HeroSection(props: { title: string; url?: string }) {
           transition={{ duration: 1, delay: 1.5 }}
           className="text-xl font-normal tracking-wide text-gray-300 md:text-2xl"
         >
-          Unleash the Power of Luxury
+          {props.header}
         </motion.p>
+
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -72,9 +73,9 @@ export default function HeroSection(props: { title: string; url?: string }) {
           transition={{ duration: 1, delay: 2.0 }}
           className="text-lg font-normal tracking-wide text-neutral-300 md:text-xl"
         >
-          Explore our collection and find your perfect ride today.
+          {props.description}
         </motion.p>
-        <EncryptButton initialText="DISCOVER" />
+        <EncryptButton visible={true} initialText="DISCOVER"  />
       </div>
       <div className="absolute top-[90%] z-20 text-center w-full">
         <Image

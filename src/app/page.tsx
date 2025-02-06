@@ -9,6 +9,7 @@ import { TextReveal } from "~/components/TextReveal/TextReveal";
 import ZoomParallax from "~/components/ZoomParallax/ZoomParallax";
 import InfiniteText from "~/components/InfiniteText/InfiniteText";
 import { TracingBeam } from "~/components/ui/tracing-beam";
+import StickyCursor from "~/components/StickyCursor/StickyCursor";
 
 export default function HomePage() {
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Landing
         title="NOCTYRA"
         url="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHEDeqYy0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        header="Unleash the Power of Luxury"
       />
 
       <SmoothScrollHero />

@@ -32,8 +32,8 @@ export const TextReveal = ({
   );
 
   useEffect(() => {
-    scrollYProgress.on("change", (value) => {
-      console.log(value);
+    scrollYProgress.on("change", (_value) => {
+      // console.log(value); // This line is intentionally left empty
     });
   }, [scrollYProgress]);
 

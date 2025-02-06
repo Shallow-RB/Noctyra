@@ -7,21 +7,17 @@ import {
   pgTableCreator,
   real,
   serial,
+  text,
   varchar,
 } from "drizzle-orm/pg-core";
 
-/**
- * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
- * database instance for multiple projects.
- *
- * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
- */
 export const createTable = pgTableCreator((name) => `noctyra_${name}`);
 
 export const motorcycles = pgTable("motorcycles", {
   id: serial("id").primaryKey(),
   brandName: varchar("brand_name", { length: 50 }).notNull(),   
   modelName: varchar("model_name", { length: 100 }).notNull(),
+  description: text("description").notNull(),
   price: integer("price").notNull(),
   engineType: varchar("engine_type", { length: 100 }).notNull(),
   engineCapacity: integer("engine_capacity").notNull(),
