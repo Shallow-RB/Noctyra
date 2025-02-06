@@ -1,5 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import brandLogoList from "../../data/brand-logo-list.json"; // Import the JSON data
 
 const Example = () => {
   return <HorizontalCarousel />;
@@ -14,13 +15,27 @@ const HorizontalCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["55%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-gradient-to-b from-black to-white">
+    <section
+      ref={targetRef}
+      className="relative h-[300vh] bg-gradient-to-b from-black to-white"
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <h1 className="text-5xl pl-12 font-light tracking-widest text-nowrap uppercase">our brands</h1>
-        <motion.div style={{ x }} className="flex gap-4">
-          {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
-          })}
+
+        <motion.div style={{ x }} className="flex gap-36">
+        <div className="flex items-center justify-center h-[450px] text-nowrap text-6xl font-light uppercase tracking-widest">
+          our brands
+        </div>
+
+          {brandLogoList.map((logo) => (
+            <Card
+              card={{
+                url: logo.url,
+                title: logo.name.split("-")[0]?.toUpperCase() ?? "",
+                id: logo.key,
+              }}
+              key={logo.key}
+            />
+          ))}
         </motion.div>
       </div>
     </section>
@@ -31,7 +46,7 @@ const Card = ({ card }: { card: CardType }) => {
   return (
     <motion.div
       key={card.id}
-      className="duration-300 overflow-hidden group relative h-[450px] w-[450px] bg-neutral-950 saturate-0 transition-all hover:saturate-100"
+      className="group relative h-[450px] w-[450px] overflow-hidden bg-transparent"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -40,59 +55,27 @@ const Card = ({ card }: { card: CardType }) => {
       <motion.div
         style={{
           backgroundImage: `url(${card.url})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-105"
+        className="absolute inset-0 z-0 bg-transparent transition-transform duration-300 scale-75 group-hover:scale-90 saturate-0   hover:saturate-100 backdrop-blur-2xl  hover:backdrop-blur-none"
       ></motion.div>
-      <div className="absolute inset-0 z-10 grid place-content-center backdrop-blur-2xl hover:backdrop-blur-none transition-all duration-300">
-        <motion.p
-          className="p-8 text-6xl uppercase text-white transition-opacity duration-300 group-hover:opacity-0"
-        >
+
+
+      {/* <div className="absolute inset-0 z-10 grid place-content-center bg-transparent ">
+        <motion.p className="p-8 text-6xl uppercase text-white transition-opacity duration-300 group-hover:opacity-0">
           {card.title}
         </motion.p>
-      </div>
+      </div> */}
     </motion.div>
   );
 };
 
 export default Example;
 
-type CardType = {
+interface CardType {
   url: string;
   title: string;
-  id: number;
-};
-
-const cards: CardType[] = [
-  {
-    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-    title: "Yamaha",
-    id: 1,
-  },
-  {
-    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-    title: "Honda",
-    id: 2,
-  },
-
-  {
-    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-    title: "Kawasaki",
-    id: 3,
-  },
-
-  {
-    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-    title: "BMW",
-    id: 4,
-  },
-
-  {
-    url: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxI0LSR5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-    title: "Ducati",
-    id: 5,
-  },
-
-
-];
+  id: string;
+}

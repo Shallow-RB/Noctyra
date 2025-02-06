@@ -2,12 +2,15 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Paragraph } from "./Word";
+import Image from "next/image";
 
 interface TextRevealProps {
   headerText: string;
   text: string;
   imageUrl: string;
   inverted?: boolean;
+  textColor?: string;
+  clipPath?: string;
 }
 
 export const TextReveal = ({
@@ -15,6 +18,8 @@ export const TextReveal = ({
   text,
   imageUrl,
   inverted = false,
+  textColor,
+  clipPath,
 }: TextRevealProps) => {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -47,19 +52,22 @@ export const TextReveal = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-4 w-full text-3xl font-normal uppercase text-black"
+              className={`mb-4 w-full text-3xl font-normal uppercase text-${textColor}`}
             >
               {headerText}
             </motion.div>
-            <Paragraph text={text} />
+            <Paragraph text={text} textColor={textColor!} />
           </div>
-          <motion.img
-            src={imageUrl}
-            ref={element}
-            alt="Revealing Image"
-            style={{ opacity, translateX }}
-            className="w-full"
-          />
+          <motion.div className="w-full" style={{ opacity, translateX, clipPath }}>
+            <Image
+              src={imageUrl}
+              ref={element}
+              width={400}
+              height={400}
+              alt="Revealing Image"
+              className="w-full"
+            />
+          </motion.div>
         </>
       ) : (
         <>
@@ -67,7 +75,7 @@ export const TextReveal = ({
             src={imageUrl}
             ref={element}
             alt="Revealing Image"
-            style={{ opacity, translateX }}
+            style={{ opacity, translateX, clipPath }}
             className="w-full pr-12"
           />
           <div className="w-full">
@@ -76,11 +84,11 @@ export const TextReveal = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-4 w-full text-3xl font-normal uppercase text-black"
+              className={`mb-4 w-full text-3xl font-normal uppercase text-${textColor}`}
             >
               {headerText}
             </motion.div>
-            <Paragraph text={text} />
+            <Paragraph text={text} textColor={textColor!} />
           </div>
         </>
       )}

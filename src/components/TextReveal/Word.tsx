@@ -2,7 +2,7 @@
 import { motion, type MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-export const Paragraph = ({ text}: { text: string}) => {
+export const Paragraph = ({ text, textColor }: { text: string, textColor: string }) => {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
@@ -15,15 +15,16 @@ export const Paragraph = ({ text}: { text: string}) => {
   return (
     <p
       ref={element}
-      className={`flex w-2/3 flex-wrap text-left text-2xl font-normal leading-6 tracking-wider text-black`}
+      className={`flex w-[90%] flex-wrap text-left text-2xl font-normal leading-6 tracking-wider text-${textColor}`}
     >
+
 
       {words.map((word, i) => {
         const start = i / totalWords;
         const end = (i + 1) / totalWords;
 
         return (
-          <Word key={i} range={[start, end]} progress={scrollYProgress}>
+          <Word key={i} range={[start, end]} progress={scrollYProgress} textColor={textColor}>
             {word}
           </Word>
         );
@@ -32,7 +33,7 @@ export const Paragraph = ({ text}: { text: string}) => {
   );
 };
 
-const Word = ({ children, range, progress }: { children: string, range: [number, number], progress: MotionValue<number> }) => {
+const Word = ({ children, range, progress, textColor }: { children: string, range: [number, number], progress: MotionValue<number>, textColor: string }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <motion.span className="mr-1 mt-6" style={{ opacity }}>
@@ -40,3 +41,4 @@ const Word = ({ children, range, progress }: { children: string, range: [number,
     </motion.span>
   );
 };
+

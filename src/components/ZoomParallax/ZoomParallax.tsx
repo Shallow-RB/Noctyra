@@ -24,23 +24,23 @@ export default function ZoomParallax() {
       scale: scale4,
     },
     {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHvg2Im1YF79Vzl1sIPk2WRjgxZECceG58bB4J",
+      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
       scale: scale4,
     },
     {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHpP3snWRxZcGVh43KvCJ091ySznEOusW6a7tj",
+      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
       scale: scale5,
     },
     {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHewEwOZCsh4fPE3ANl1kuLF5j2qdvoKBxVmI6",
+      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
       scale: scale6,
     },
     {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
       scale: scale8,
     },
     {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
       scale: scale9,
     },
   ];

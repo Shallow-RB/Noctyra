@@ -10,7 +10,14 @@ const letterVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function HeroSection(props: { title: string; url?: string, header?: string, description?: string }) {
+export default function HeroSection(props: {
+  title: string;
+  videoUrl?: string;
+  preloadImgUrl?: string;
+  logoUrl: string;
+  header?: string;
+  description?: string;
+}) {
   const [loaded, setLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -23,10 +30,10 @@ export default function HeroSection(props: { title: string; url?: string, header
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       {!videoLoaded && !videoError && (
         <Image
-          src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv"
+          src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
           alt="motorbike"
           fill
-          blurDataURL="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv"
+          blurDataURL="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
           placeholder="blur"
         />
       )}
@@ -36,14 +43,17 @@ export default function HeroSection(props: { title: string; url?: string, header
         muted
         playsInline
         preload="auto"
-        src={props.url}
-        className={`absolute h-full w-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-50' : 'opacity-0'}`}
+        src={props.videoUrl}
+        className={`absolute h-full w-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-50" : "opacity-0"}`}
         onLoadedData={() => setVideoLoaded(true)}
         onError={() => setVideoError(true)}
       ></video>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#000000] opacity-100"></div>
 
       <div className="relative z-10 space-y-6 text-center">
+        <motion.div className="flex items-center justify-center">
+          <Image src={props.logoUrl} alt="logo" width={100} height={100} />
+        </motion.div>
         <motion.h1 className="text-6xl font-extralight tracking-widest text-white md:text-8xl">
           {props.title.split("").map((char, index) => (
             <motion.span
@@ -66,18 +76,16 @@ export default function HeroSection(props: { title: string; url?: string, header
           {props.header}
         </motion.p>
 
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
           transition={{ duration: 1, delay: 2.0 }}
-          className="text-lg font-normal tracking-wide text-neutral-300 md:text-xl"
+          className="mx-auto w-4/5 text-lg font-normal tracking-wide text-neutral-300 md:text-xl"
         >
           {props.description}
         </motion.p>
-        <EncryptButton visible={true} initialText="DISCOVER"  />
       </div>
-      <div className="absolute top-[90%] z-20 text-center w-full">
+      <div className="absolute top-[90%] z-20 w-full text-center">
         <Image
           src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHKB4EqqgYqsOARCblfHXPUk09yzTEgadiQGhF"
           className="mx-auto"

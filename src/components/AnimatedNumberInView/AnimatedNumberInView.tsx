@@ -4,7 +4,7 @@ import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 
 
-export function AnimatedNumberInView({ getal }: { getal: number }) {
+export function AnimatedNumberInView({ prefix, getal }: { prefix: string, getal: number }) {
   const [value, setValue] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -18,8 +18,9 @@ export function AnimatedNumberInView({ getal }: { getal: number }) {
 
   return (
     <div className='flex w-full items-center justify-center' ref={ref}>
+      <p className='text-white text-2xl text-center text-align-center px-2'>{prefix}</p>
       <AnimatedNumber
-        className='inline-flex items-center font-mono text-2xl font-light text-zinc-800 dark:text-zinc-50'
+        className='inline-flex items-center text-3xl  font-light text-white'
         springOptions={{
           bounce: 0,
           duration: 5000,

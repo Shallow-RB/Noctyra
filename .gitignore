@@ -9,6 +9,8 @@
 /coverage
 
 # database
+/drizzle
+/drizzle/db.sqlite
 /prisma/db.sqlite
 /prisma/db.sqlite-journal
 db.sqlite
@@ -44,3 +46,4 @@ yarn-error.log*
 
 # idea files
 .idea
+.vscode

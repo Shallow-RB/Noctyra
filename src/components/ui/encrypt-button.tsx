@@ -7,9 +7,11 @@ import { useRouter } from "next/navigation";
 interface EncryptButtonProps {
   initialText?: string;
   visible: boolean;
+  delay: number;
+  navigateTo: string;
 }
 
-function EncryptButton({ initialText = "Encrypt data", visible }: EncryptButtonProps) {
+function EncryptButton({ initialText = "Encrypt data", visible, delay, navigateTo }: EncryptButtonProps) {
   const { text, scramble, stopScramble } = useScramble(initialText);
   const router = useRouter();
 
@@ -19,10 +21,11 @@ function EncryptButton({ initialText = "Encrypt data", visible }: EncryptButtonP
     <motion.button
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 2.5 }}
+      transition={{ duration: 1, delay: delay }}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
-      onClick={() => router.push('/brand')}
+      onClick={() => router.push(navigateTo)}
+
       className="group relative w-[150px] overflow-hidden border-[1px] border-neutral-400 bg-transparent px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:bg-neutral-800"
     >
       <span>{text}</span>
