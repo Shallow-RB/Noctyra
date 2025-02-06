@@ -28,6 +28,8 @@ export const motorcycles = pgTable("motorcycles", {
   topSpeed: integer("top_speed").notNull(),
   availableColors: varchar("available_colors", { length: 255 }).notNull(),
   type: varchar("type", { length: 20 }).notNull(),
+  videoUrl: text("video_url").notNull().default(""),
+  preloadImgUrl: text("preload_img_url").notNull().default(""),
   imageUrl: text("image_url").notNull().default(""),
   imageUrl2: text("image_url2").default(""),
   imageUrl3: text("image_url3").default(""),

@@ -6,9 +6,10 @@ import { SmoothScrollHero } from "~/components/SmoothScrollHero/SmoothScrollHero
 import Landing from "~/components/Landing/Landing";
 import HorizontalCarousel from "~/components/Carousel/HorizontalCarousel";
 import { TextReveal } from "~/components/TextReveal/TextReveal";
-import ZoomParallax from "~/components/ZoomParallax/ZoomParallax";
+import { ZoomParallax } from "~/components/ZoomParallax/ZoomParallax";
 import InfiniteText from "~/components/InfiniteText/InfiniteText";
 import { TracingBeam } from "~/components/ui/tracing-beam";
+
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,12 @@ export default function HomePage() {
     }
     requestAnimationFrame(raf);
   }, []);
+
+  const zoomParallaxImages = [
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv",
+
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
+  ];
 
   return (
     <div>
@@ -73,8 +80,9 @@ export default function HomePage() {
         </div>
       </TracingBeam>
       <InfiniteText inputText="GALLERY" textColor="black" backgroundColor="white" slashColor="black" />
-      <ZoomParallax />
+      <ZoomParallax imageUrls={zoomParallaxImages} />
     </div>
+
 
 
   );

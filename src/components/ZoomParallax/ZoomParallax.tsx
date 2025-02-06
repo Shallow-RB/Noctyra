@@ -5,54 +5,28 @@ import { useRef } from "react";
 import React from "react";
 import "./ZoomParallax.scss";
 
-export default function ZoomParallax() {
+interface ZoomParallaxProps {
+  imageUrls: string[];
+}
+
+export function ZoomParallax({ imageUrls }: ZoomParallaxProps) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
 
-  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
-
-  const pictures = [
-    {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-      scale: scale4,
-    },
-    {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
-      scale: scale4,
-    },
-    {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
-      scale: scale5,
-    },
-    {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
-      scale: scale6,
-    },
-    {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
-      scale: scale8,
-    },
-    {
-      src: "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
-      scale: scale9,
-    },
-  ];
+  const scales = [4, 5, 6, 8, 9]; // Default scale values
 
   return (
     <div ref={container} className="zoom-container">
       <div className="sticky">
-        {pictures.map(({ src, scale }, index) => {
+        {imageUrls.map((src, index) => {
+          const scale = useTransform(scrollYProgress, [0, 1], [1, scales[index] ?? 4]);
           return (
-            <motion.div style={{ scale: scale }} key={index} className="el">
+            <motion.div style={{ scale }} key={index} className="el">
               <div className="imageContainer">
-                <Image className="img" src={src} alt="image" fill />
+                <Image className="img" src={src} alt={`image-${index}`} fill />
               </div>
             </motion.div>
           );

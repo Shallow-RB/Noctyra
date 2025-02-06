@@ -30,17 +30,17 @@
     &:nth-of-type(2) {
       .imageContainer {
         top: -30vh;
-        left: 2.5vw;
-        height: 30vh;
-        width: 30vw;
+        left: -17.5vw;
+        height: 28vh;
+        width: 40vw;
       }
     }
     &:nth-of-type(3) {
       .imageContainer {
-        top: 20vh;
-        left: -25vw;
-        height: 20vh;
-        width: 20vw;
+        top: -5vh;
+        left: 30vw;
+        height: 30vh;
+        width: 25vw;
       }
     }
 
@@ -49,28 +49,17 @@
         top: 25vh;
         left: 15vw;
         height: 20vh;
-        width: 50vw;
+        width: 30vw;
       }
     }
     &:nth-of-type(5) {
       .imageContainer {
-        top: -30vh;
-        left: -30vw;
-        height: 20vh;
-        width: 20vw;
-        aspect-ratio: 1/1;
+        top: 20vh;
+        left: -28vw;
+        height: 35vh;
+        width: 40vw;
       }
-    }
-    &:nth-of-type(6) {
-      .imageContainer {
-        top: 0vh;
-        left: 25vw;
-        height: 20vh;
-        width: 20vw;
-      }
+
     }
   }
-
-
-
 }
