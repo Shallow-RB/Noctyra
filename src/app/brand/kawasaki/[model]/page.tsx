@@ -2,20 +2,9 @@ import { db } from '~/db';
 import { motorcycles } from '~/db/schema';
 import { eq } from 'drizzle-orm';
 
-interface Motorcycle {
-  id: number;
-  modelName: string;
-  description: string;
-  price: number;
-  // Add other fields as necessary
-}
 
-interface KawasakiModelProps {
-  motorcycle: Motorcycle | null;
-}
-
-export default async function KawasakiModel({ params }: { params: { model: string } }) {
-  const formattedModel = params.model.split('-').join(' ');
+export default async function KawasakiModel({ params }: { params: Promise<{ model: string }> }) {
+  const formattedModel = (await params).model.split('-').join(' ');
   const model = formattedModel.toUpperCase();
 
   try {

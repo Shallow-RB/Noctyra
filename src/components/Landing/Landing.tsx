@@ -52,7 +52,7 @@ export default function HeroSection(props: {
 
       <div className="relative z-10 space-y-6 text-center">
         <motion.div className="flex items-center justify-center">
-          <Image src={props.logoUrl} alt="logo" width={100} height={100} />
+          <Image src={props.logoUrl} alt="logo" width={150} height={150} />
         </motion.div>
         <motion.h1 className="text-6xl font-extralight tracking-widest text-white md:text-8xl">
           {props.title.split("").map((char, index) => (

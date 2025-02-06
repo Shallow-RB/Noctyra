@@ -4,10 +4,8 @@ import { eq } from "drizzle-orm";
 import Landing from "~/components/Landing/Landing";
 import { TracingBeam } from "~/components/ui/tracing-beam";
 import { TextReveal } from "~/components/TextReveal/TextReveal";
-import { AnimatedNumberInView } from "~/components/AnimatedNumberInView/AnimatedNumberInView";
 import InfiniteText from "~/components/InfiniteText/InfiniteText";
 import ModelAccordion from "~/components/Accordion/ModelAccordian";
-
 
 export default async function Kawasaki() {
   const motorcyclesList = await db
@@ -21,9 +19,25 @@ export default async function Kawasaki() {
         title="KAWASAKI"
         header="Let the Good Times Roll"
         description="Kawasaki motorcycles are built for thrill-seekers who crave raw power, aggressive styling, and high-performance dominance on any road."
-        logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHm8ggMT4ZU37XDiQBO8v2JYV9Kduz1GhrPIMq"
+        logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHFk9f7IPN0SOvwsxAjZ9YmJW5dhXPL4akBHf2"
         videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+      />
+
+      <InfiniteText
+        inputText="KAWASAKI"
+        textColor="white"
+        backgroundColor="black"
+        slashColor="#00c951"
+      />
+
+      <ModelAccordion
+        texts={motorcyclesList.map((brand) => brand.modelName)}
+        descriptions={motorcyclesList.map((brand) => brand.description)}
+        navigateTo={motorcyclesList.map((brand) =>
+          brand.modelName.toLowerCase().replace(/\s+/g, "-"),
+        )}
+        brandName="kawasaki"
       />
 
       <TracingBeam beamColor="#00c951">
@@ -65,25 +79,6 @@ export default async function Kawasaki() {
         backgroundColor="black"
         slashColor="#00c951"
       />
-
-      <ModelAccordion
-        texts={motorcyclesList.map((brand) => brand.modelName)}
-        descriptions={motorcyclesList.map((brand) => brand.description)}
-        navigateTo={motorcyclesList.map((brand) => brand.modelName.toLowerCase().replace(/\s+/g, '-'))}
-        brandName="kawasaki"
-      />
-
-
-      <div className="mx-auto w-[60%]">
-        {motorcyclesList.map((brand) => (
-          <div key={brand.id} className="flex flex-col pb-8">
-            <p>{brand.modelName}</p>
-            <p>{brand.description}</p>
-            <p>{brand.price}</p>
-            <AnimatedNumberInView prefix="€" getal={brand.price} />
-          </div>
-        ))}
-      </div>
     </>
   );
 }

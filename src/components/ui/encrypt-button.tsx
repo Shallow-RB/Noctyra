@@ -9,13 +9,40 @@ interface EncryptButtonProps {
   visible: boolean;
   delay: number;
   navigateTo: string;
+  brandName?: string;
 }
 
-function EncryptButton({ initialText = "Encrypt data", visible, delay, navigateTo }: EncryptButtonProps) {
+function getBorderColor(brandName: string): string {
+  switch (brandName.toLowerCase()) {
+    case "ducati":
+      return "#e41f2d";
+    case "yamaha":
+      return "#053aa6";
+    case "kawasaki":
+      return "#00c951";
+    case "bmw":
+      return "#0166B1";
+    case "honda":
+      return "#FF0000";
+    default:
+      return "#ffffff";
+  }
+}
+
+function EncryptButton({
+  initialText = "Encrypt data",
+  visible,
+  delay,
+  navigateTo,
+  brandName,
+}: EncryptButtonProps) {
   const { text, scramble, stopScramble } = useScramble(initialText);
   const router = useRouter();
 
   if (!visible) return null;
+
+  const borderColor = getBorderColor(brandName ?? "");
+  console.log(borderColor);
 
   return (
     <motion.button
@@ -25,8 +52,8 @@ function EncryptButton({ initialText = "Encrypt data", visible, delay, navigateT
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
       onClick={() => router.push(navigateTo)}
-
-      className="group relative w-[150px] overflow-hidden border-[1px] border-neutral-400 bg-transparent px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:bg-neutral-800"
+      style={{ borderColor }}
+      className="group relative w-[150px] overflow-hidden border-[1px] bg-transparent px-4 py-2 font-mono font-medium uppercase text-white transition-colors hover:bg-neutral-800"
     >
       <span>{text}</span>
     </motion.button>

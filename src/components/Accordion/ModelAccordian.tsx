@@ -14,6 +14,7 @@ interface CardProps {
   onMouseEnter: (index: number) => void;
   onMouseLeave: () => void;
   navigateTo: string;
+  brandName: string;
 }
 
 function Card({
@@ -25,6 +26,7 @@ function Card({
   onMouseEnter,
   onMouseLeave,
   navigateTo,
+  brandName,
 }: CardProps) {
   return (
     <div
@@ -57,7 +59,7 @@ function Card({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xl font-bold"
+          className="text-xl font-bold text-center"
         >
           {text}
         </motion.div>
@@ -77,6 +79,7 @@ function Card({
           initialText="Explore"
           delay={0.5}
           navigateTo={navigateTo}
+          brandName={brandName}
         />
       </div>
     </div>
@@ -89,6 +92,7 @@ interface AccordionProps {
   headerImageSrcs?: string[];
   navigateTo: string[];
   brandName?: string;
+  backgroundColor?: string;
 }
 
 export default function Accordion({
@@ -96,7 +100,8 @@ export default function Accordion({
   descriptions,
   headerImageSrcs,
   navigateTo,
-  brandName,
+  brandName = "default",
+  backgroundColor,
 }: AccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -104,10 +109,12 @@ export default function Accordion({
   const handleMouseLeave = () => setActiveIndex(null);
 
   return (
-    <div className="mx-auto w-4/5">
+    <div style={{ clipPath: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)" }} className={`mx-auto w-10/12 bg-${backgroundColor}`}>
       <div className="flex h-[70vmin]">
         {texts.map((text, index) => (
           <Card
+
+
             key={index}
             index={index}
             isActive={activeIndex === index}
@@ -119,6 +126,7 @@ export default function Accordion({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             navigateTo={`/brand/${brandName}/${navigateTo[index]?.split(" ").join("-")}`}
+            brandName={brandName}
           />
         ))}
       </div>
