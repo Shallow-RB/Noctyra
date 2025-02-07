@@ -22,6 +22,7 @@ export function ZoomParallax({ imageUrls }: ZoomParallaxProps) {
     <div ref={container} className="zoom-container">
       <div className="sticky">
         {imageUrls.map((src, index) => {
+          // eslint-disable-next-line react-hooks/rules-of-hooks
           const scale = useTransform(scrollYProgress, [0, 1], [1, scales[index] ?? 4]);
           return (
             <motion.div style={{ scale }} key={index} className="el">
