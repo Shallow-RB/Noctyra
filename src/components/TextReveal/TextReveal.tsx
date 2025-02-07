@@ -28,7 +28,7 @@ export const TextReveal = ({
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
-  // Adjust translateX based on inverted
+
   const translateX = useTransform(
     scrollYProgress,
     [0, 0.7],
