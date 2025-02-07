@@ -15,7 +15,9 @@ interface CardProps {
   onMouseLeave: () => void;
   navigateTo: string;
   brandName: string;
+  backgroundImage: string;
 }
+
 
 function Card({
   index,
@@ -27,6 +29,7 @@ function Card({
   onMouseLeave,
   navigateTo,
   brandName,
+  backgroundImage,
 }: CardProps) {
   return (
     <div
@@ -40,9 +43,11 @@ function Card({
         className="h-full w-full object-cover"
         width={500}
         height={500}
-        src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
-        alt="kawasaki"
+        src={backgroundImage}
+        alt={text}
       />
+
+
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white">
         {headerImageSrc && (
           <div className="mb-8 h-[150px] w-[150px]">
@@ -93,7 +98,9 @@ interface AccordionProps {
   navigateTo: string[];
   brandName?: string;
   backgroundColor?: string;
+  backgroundImages?: string[];
 }
+
 
 export default function Accordion({
   texts,
@@ -102,6 +109,7 @@ export default function Accordion({
   navigateTo,
   brandName = "default",
   backgroundColor,
+  backgroundImages,
 }: AccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -109,12 +117,10 @@ export default function Accordion({
   const handleMouseLeave = () => setActiveIndex(null);
 
   return (
-    <div style={{ clipPath: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)" }} className={`mx-auto w-10/12 bg-${backgroundColor}`}>
+    <div style={{ clipPath: "polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)" }} className={`mx-auto border border-white w-10/12 bg-${backgroundColor}`}>
       <div className="flex h-[70vmin]">
         {texts.map((text, index) => (
           <Card
-
-
             key={index}
             index={index}
             isActive={activeIndex === index}
@@ -125,8 +131,9 @@ export default function Accordion({
             }
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            navigateTo={`/brand/${brandName}/${navigateTo[index]?.split(" ").join("-")}`}
+            navigateTo={`/brand/${brandName}/${navigateTo[index]?.split(" ")?.join("-") ?? ""}`}
             brandName={brandName}
+            backgroundImage={backgroundImages?.[index] ?? ""}
           />
         ))}
       </div>

@@ -28,7 +28,7 @@ export function EngineStats({ stats, textColor }: EngineStatsProps) {
               index < stats.length - 1 ? "border-r border-white" : ""
             }`}
           >
-            <dt className={`text-lg text-[${textColor}] ?? 'text-white'}`}>
+            <dt  style={{ color: textColor ?? "white" }} className={`text-lg text-[${textColor}] ?? 'text-white'}`}>
               {stat.name.toUpperCase()}
             </dt>
             <dd className="text-3xl font-light tracking-tight text-white sm:text-5xl">

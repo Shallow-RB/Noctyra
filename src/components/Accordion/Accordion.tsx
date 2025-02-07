@@ -15,7 +15,9 @@ interface CardProps {
   onMouseEnter: (index: number) => void;
   onMouseLeave: () => void;
   navigateTo: string;
+  backgroundImages?: string[];
 }
+
 
 function Card({
   index,
@@ -26,6 +28,7 @@ function Card({
   onMouseEnter,
   onMouseLeave,
   navigateTo,
+  backgroundImages
 }: CardProps) {
   return (
     <div
@@ -39,9 +42,10 @@ function Card({
         className="h-full w-full object-cover"
         width={500}
         height={500}
-        src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        src={backgroundImages?.[index] ?? "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"}
         alt="kawasaki"
       />
+
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white">
         {headerImageSrc && (
           <div className="mb-8 h-[150px] w-[150px]">
@@ -85,9 +89,11 @@ interface AccordionProps {
   descriptions?: string[];
   headerImageSrcs?: string[];
   navigateTo: string[];
+  backgroundImages?: string[];
 }
 
-export default function Accordion({ texts, descriptions, headerImageSrcs, navigateTo }: AccordionProps) {
+
+export default function Accordion({ texts, descriptions, headerImageSrcs, navigateTo, backgroundImages }: AccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleMouseEnter = (index: number) => setActiveIndex(index);
@@ -109,6 +115,7 @@ export default function Accordion({ texts, descriptions, headerImageSrcs, naviga
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             navigateTo={`/brand/${navigateTo[index]?.split("-")[0]?.toLowerCase()}`}
+            backgroundImages={backgroundImages}
           />
         ))}
       </div>

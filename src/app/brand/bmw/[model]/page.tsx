@@ -14,7 +14,6 @@ export default async function BMWModel({
   params,
 }: {
   params: Promise<{ model: string }>;
-
 }) {
   const formattedModel = (await params).model.split("-").join(" ");
   const model = formattedModel.toUpperCase();

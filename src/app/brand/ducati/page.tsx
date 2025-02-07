@@ -22,7 +22,6 @@ export default async function Ducati() {
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHO63Jkpaio0SnakLNxV8hfWQd7MlczgTv954J"
         videoUrl={motorcyclesList[Math.floor(Math.random() * motorcyclesList.length)]?.videoUrl}
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
-
       />
 
       <InfiniteText
@@ -41,6 +40,7 @@ export default async function Ducati() {
             brand.modelName.toLowerCase().replace(/\s+/g, "-"),
           )}
           brandName="ducati"
+          backgroundImages={motorcyclesList.map((brand) => brand.imageUrl)}
         />
       </div>
 
@@ -48,31 +48,36 @@ export default async function Ducati() {
         <div className="bg-white">
           <div className="mx-auto w-[80%]">
             <TextReveal
-              headerText="The Pinnacle of Two-Wheeled Luxury"
-              text="Experience the fusion of cutting-edge performance and refined elegance with our handpicked selection of Yamaha, Kawasaki, and BMW motorcycles."
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Exhilarating Performance"
+              text="Ducati is known for its powerful V-twin and V4 engines, delivering aggressive acceleration and high-speed thrills on both road and track."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHkqWykVbLnpQB0UXfrMvZtulxaO6hJomP9Fbq"
+              clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="black"
             />
             <TextReveal
-              headerText="Crafted for the Bold and Elite"
-              text="Every ride is a statement—our motorcycles embody precision engineering, power, and unmatched sophistication. "
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Iconic Italian Design"
+              text="Every Ducati motorcycle is a work of art, featuring sleek, aerodynamic designs, signature trellis frames, and premium components. "
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHSsqiXWBQk93YxZ0zD16lrNWeHUt4cvEfjTgh"
+              clipPath="polygon(10% 0, 90% 0, 100% 100%, 20% 100%)"
               inverted={true}
               textColor="black"
             />
             <TextReveal
-              headerText="Iconic Machines, Legendary Performance"
-              text="Our motorcycles are more than just machines; they are a celebration of design, power, and precision. Ride the world's most revered motorcycles, built for those who demand power, prestige, and perfection."
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Racing Heritage"
+              text="With a strong presence in MotoGP and Superbike racing, Ducati motorcycles are engineered for high performance and precision handling."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHa1K6wCsAgskdopnh0Ltr7bEv6BxjCPZlqIw8"
+              clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="black"
             />
             <TextReveal
-              headerText="Elevate Your Ride, Redefine Your Journey"
-              text="From exhilarating speed to timeless design, discover motorcycles that transcend the ordinary and embrace the extraordinary."
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Exclusivity & Craftsmanship"
+              text="Ducati bikes are built with high-end materials, ensuring exclusivity, attention to detail, and a truly premium riding experience."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHlTNq5nDPzqVwa71GRYC83rSodITEmi5J60OQ"
+              clipPath="polygon(10% 0, 90% 0, 100% 100%, 20% 100%)"
               inverted={true}
               textColor="black"
             />
+
           </div>
         </div>
       </TracingBeam>

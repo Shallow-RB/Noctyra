@@ -38,33 +38,34 @@ export default async function Kawasaki() {
           brand.modelName.toLowerCase().replace(/\s+/g, "-"),
         )}
         brandName="kawasaki"
+        backgroundImages={motorcyclesList.map((brand) => brand.imageUrl)}
       />
 
       <TracingBeam beamColor="#00c951">
         <div className="">
           <div className="mx-auto w-[80%]">
             <TextReveal
-              headerText="The Pinnacle of Two-Wheeled Luxury"
-              text="Experience the fusion of cutting-edge performance and refined elegance with our handpicked selection of Yamaha, Kawasaki, and BMW motorcycles."
+              headerText="Raw Power & Speed"
+              text="Kawasaki motorcycles are known for their high-revving engines and aggressive power delivery, with the Ninja H2 being a prime example of extreme performance."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
               textColor="white"
             />
             <TextReveal
-              headerText="Crafted for the Bold and Elite"
-              text="Every ride is a statement—our motorcycles embody precision engineering, power, and unmatched sophistication. "
+              headerText="Bold & Aggressive Design"
+              text="With sharp lines, striking colors, and an aggressive stance, Kawasaki motorcycles stand out for their bold aesthetics and aerodynamic styling."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
               inverted={true}
               textColor="white"
             />
             <TextReveal
-              headerText="Iconic Machines, Legendary Performance"
-              text="Our motorcycles are more than just machines; they are a celebration of design, power, and precision. Ride the world's most revered motorcycles, built for those who demand power, prestige, and perfection."
+              headerText="Racing DNA"
+              text="From World Superbike championships to MotoGP, Kawasaki's racing success translates into cutting-edge performance for street and track riders."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
               textColor="white"
             />
             <TextReveal
-              headerText="Elevate Your Ride, Redefine Your Journey"
-              text="From exhilarating speed to timeless design, discover motorcycles that transcend the ordinary and embrace the extraordinary."
+              headerText="Versatile Lineup"
+              text="Offering sportbikes, cruisers, adventure, and off-road models, Kawasaki has a motorcycle for every riding style and preference."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
               inverted={true}
               textColor="white"

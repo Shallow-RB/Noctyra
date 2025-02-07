@@ -40,36 +40,41 @@ export default async function BMW() {
             brand.modelName.toLowerCase().replace(/\s+/g, "-"),
           )}
           brandName="bmw"
+          backgroundImages={motorcyclesList.map((brand) => brand.imageUrl)}
         />
       </div>
-
 
       <TracingBeam beamColor="#0166B1">
         <div className="bg-white">
           <div className="mx-auto w-[80%]">
             <TextReveal
-              headerText="The Pinnacle of Two-Wheeled Luxury"
-              text="Experience the fusion of cutting-edge performance and refined elegance with our handpicked selection of Yamaha, Kawasaki, and BMW motorcycles."
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Innovation & Technology"
+              text="BMW leads in motorcycle innovation, integrating advanced electronics, rider aids, and adaptive suspension. Their bikes feature cutting-edge safety and performance technologies."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHgduTLI71hzIFYDriOtT59MCGAcXBLaxdjEvm"
+              clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="black"
             />
             <TextReveal
-              headerText="Crafted for the Bold and Elite"
-              text="Every ride is a statement—our motorcycles embody precision engineering, power, and unmatched sophistication. "
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Luxury & Comfort"
+              text="Renowned for premium materials and ergonomic designs, BMW motorcycles excel in long-distance touring. Models like the R 1250 GS offer superior comfort and refinement."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHKbbctEgYqsOARCblfHXPUk09yzTEgadiQGhF"
+              clipPath="polygon(10% 0, 90% 0, 100% 100%, 20% 100%)"
               inverted={true}
               textColor="black"
             />
+
             <TextReveal
-              headerText="Iconic Machines, Legendary Performance"
-              text="Our motorcycles are more than just machines; they are a celebration of design, power, and precision. Ride the world's most revered motorcycles, built for those who demand power, prestige, and perfection."
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Performance & Power"
+              text="BMW engines deliver a balance of power and efficiency, with high-performance models like the S 1000 RR setting benchmarks in speed and handling."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHCkIhscNbl7SmAgV5iqkTZEUd4DhneXR69cuz"
+              clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="black"
             />
             <TextReveal
-              headerText="Elevate Your Ride, Redefine Your Journey"
-              text="From exhilarating speed to timeless design, discover motorcycles that transcend the ordinary and embrace the extraordinary."
-              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+              headerText="Adventure & Touring"
+              text="With legendary adventure bikes like the GS series, BMW dominates the touring and off-road market, offering versatility and rugged durability."
+              imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHudwy2lXKhdFEwzr9vAMlnioybOQm0Ikj7taH"
+              clipPath="polygon(10% 0, 90% 0, 100% 100%, 20% 100%)"
               inverted={true}
               textColor="black"
             />
@@ -82,7 +87,6 @@ export default async function BMW() {
         textColor="black"
         backgroundColor="white"
         slashColor="#0166B1"
-
       />
     </>
   );
