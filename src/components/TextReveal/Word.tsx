@@ -16,6 +16,7 @@ export const Paragraph = ({ text, textColor }: { text: string, textColor: string
     <p
       ref={element}
       className={`flex w-[90%] flex-wrap text-left text-2xl font-normal leading-6 tracking-wider text-${textColor}`}
+      style={{ color: textColor }}
     >
 
 

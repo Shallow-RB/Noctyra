@@ -20,9 +20,11 @@ export default function InfiniteText({
         <motion.div
           key={`left-${index}`}
           className={`flex flex-shrink-0 text-8xl pr-6 font-normal uppercase tracking-widest text-${textColor}`}
+          style={{ color: textColor }}
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{ duration: 5, ease: "linear", repeat: Infinity }}
+
         >
           {inputText}&nbsp; 
           <span style={{ color: slashColor }}>{"//"}</span>

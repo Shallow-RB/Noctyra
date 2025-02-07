@@ -28,7 +28,7 @@ export const TextReveal = ({
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
-
+  console.log(textColor)
   // Adjust translateX based on inverted
   const translateX = useTransform(
     scrollYProgress,
@@ -53,6 +53,7 @@ export const TextReveal = ({
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className={`mb-4 w-full text-3xl font-normal uppercase text-${textColor}`}
+              style={{ color: textColor }}
             >
               {headerText}
             </motion.div>
@@ -85,6 +86,7 @@ export const TextReveal = ({
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className={`mb-4 w-full text-3xl font-normal uppercase text-${textColor}`}
+              style={{ color: textColor }}
             >
               {headerText}
             </motion.div>
