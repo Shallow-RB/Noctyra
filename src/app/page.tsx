@@ -10,7 +10,6 @@ import { ZoomParallax } from "~/components/ZoomParallax/ZoomParallax";
 import InfiniteText from "~/components/InfiniteText/InfiniteText";
 import { TracingBeam } from "~/components/ui/tracing-beam";
 
-
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
@@ -30,9 +29,11 @@ export default function HomePage() {
   }, []);
 
   const zoomParallaxImages = [
-    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv",
-
-    //todo aanvullen
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHYxRSuO4LZXfIP3Wa7pJTresFv2Nzgyih9DV5",
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHguHjQrs71hzIFYDriOtT59MCGAcXBLaxdjEv",
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHSic3wRKBQk93YxZ0zD16lrNWeHUt4cvEfjTg",
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHFyzSiucPN0SOvwsxAjZ9YmJW5dhXPL4akBHf",
+    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxETnOS5c9JSiRTPpHOIu5ytfakXLs61eElhv",
   ];
 
   return (
@@ -79,11 +80,13 @@ export default function HomePage() {
           </div>
         </div>
       </TracingBeam>
-      <InfiniteText inputText="GALLERY" textColor="black" backgroundColor="white" slashColor="black" />
+      <InfiniteText
+        inputText="GALLERY"
+        textColor="black"
+        backgroundColor="white"
+        slashColor="black"
+      />
       <ZoomParallax imageUrls={zoomParallaxImages} />
     </div>
-
-
-
   );
 }
