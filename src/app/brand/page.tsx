@@ -21,14 +21,15 @@ export default async function Brand() {
           <div className="mx-auto w-[80%]">
             <TextReveal
               headerText="Yamaha"
-              text="Experience the fusion of cutting-edge performance and refined elegance with our handpicked selection of Yamaha, Kawasaki, and BMW motorcycles."
+              text="Yamaha motorcycles deliver a perfect balance of power and control. From the race-inspired YZF-R1 to the torque-packed MT series, every Yamaha is built for an exhilarating ride. Feel the rush—embrace the journey."
+
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHYxRSuO4LZXfIP3Wa7pJTresFv2Nzgyih9DV5"
               clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="white"
             />
             <TextReveal
               headerText="Kawasaki"
-              text="Every ride is a statement—our motorcycles embody precision engineering, power, and unmatched sophistication. "
+              text="Kawasaki is all about raw power and bold design. From the supercharged Ninja H2 to the street-conquering Z series, every Kawasaki bike is engineered for riders who crave adrenaline and dominance. The thrill starts here—unleash your beast with Kawasaki."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHOQ6ep7io0SnakLNxV8hfWQd7MlczgTv954JR"
               clipPath="polygon(10% 0, 90% 0, 100% 100%, 20% 100%)"
               inverted={true}
@@ -37,23 +38,22 @@ export default async function Brand() {
 
             <TextReveal
               headerText="Ducati"
-              text="Our motorcycles are more than just machines; they are a celebration of design, power, and precision. Ride the world's most revered motorcycles, built for those who demand power, prestige, and perfection."
+              text="Ducati isn't just a machine, it's a masterpiece. With the fierce Panigale V4, the rebellious Diavel, and the pure thrill of the Streetfighter V4, Ducati motorcycles bring passion and precision to every turn. Ride the legend, own the road."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHFyzSiucPN0SOvwsxAjZ9YmJW5dhXPL4akBHf"
               clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="white"
             />
             <TextReveal
               headerText="BMW"
-              text="From exhilarating speed to timeless design, discover motorcycles that transcend the ordinary and embrace the extraordinary."
+              text="BMW Motorrad is where innovation meets adventure. From the precision of the S 1000 RR to the endurance of the R 1250 GS, every BMW motorcycle is crafted for performance, luxury, and limitless journeys. The road is yours—embrace the ride."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHguHjQrs71hzIFYDriOtT59MCGAcXBLaxdjEv"
               clipPath="polygon(10% 0, 90% 0, 100% 100%, 20% 100%)"
               inverted={true}
               textColor="white"
             />
             <TextReveal
-
               headerText="Honda"
-              text="From exhilarating speed to timeless design, discover motorcycles that transcend the ordinary and embrace the extraordinary."
+              text="Honda motorcycles are engineered for adventure, speed, and reliability. Whether you're tearing up the track on a CBR, conquering trails with an Africa Twin, or cruising the city streets, Honda is built for riders who dream big."
               imageUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHSic3wRKBQk93YxZ0zD16lrNWeHUt4cvEfjTg"
               clipPath="polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%)"
               textColor="white"
