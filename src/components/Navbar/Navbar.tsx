@@ -32,7 +32,6 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "home", delay: 0.2 },
     { href: "/brand", label: "brands", delay: 0.4 },
-    { href: "/catalogue", label: "catalogue", delay: 0.6 },
   ];
 
   return (
