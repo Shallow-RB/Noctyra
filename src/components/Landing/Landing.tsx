@@ -41,6 +41,7 @@ export default function HeroSection(props: {
         />
       )}
       <video
+        key={props.videoUrl}
         autoPlay
         loop
         muted
