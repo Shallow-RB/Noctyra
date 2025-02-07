@@ -21,10 +21,10 @@ export default async function Honda() {
         title="HONDA"
         header="The Power of Dreams"
         description="Honda motorcycles are engineered for adventure, speed, and reliability. Whether you're tearing up the track on a CBR or cruising the city streets, Honda is built for riders who dream big."
-
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHZOnguykYPKjxoU1M9WF7gq0yrXJH3Ds4NOeb"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        videoUrl={motorcyclesList[Math.floor(Math.random() * motorcyclesList.length)]?.videoUrl}
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+
       />
 
       <InfiniteText

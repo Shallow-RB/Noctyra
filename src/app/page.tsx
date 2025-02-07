@@ -32,15 +32,15 @@ export default function HomePage() {
   const zoomParallaxImages = [
     "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHxXxOLV5c9JSiRTPpHOIu5ytfakXLs61eElhv",
 
-    "https://db6v27veh0.ufs.sh/f/9qjypOe04JBHRazZFimVqaOFeZoQhNm06wMW2Eszv8UrKiB3",
+    //todo aanvullen
   ];
 
   return (
     <div>
       <Landing
         title="NOCTYRA"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHNREupfSx3jQlcImBgbU8X2eZYupWnSTtAwD7"
-        preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHmArwGqK4ZU37XDiQBO8v2JYV9Kduz1GhrPIM"
+        preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHSi0iI4qBQk93YxZ0zD16lrNWeHUt4cvEfjTg"
         header="Unleash the Power of Luxury"
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBH7U73qvfOmCi1GFTqYsZKy8IW6pBQuJrgS95w"
       />

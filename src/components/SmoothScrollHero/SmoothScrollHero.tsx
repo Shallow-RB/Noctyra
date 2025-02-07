@@ -142,7 +142,7 @@ const ParallaxImages = () => {
           <AnimatedText text="designed for the ultimate adventure." />
         </motion.div>
         <ParallaxImg
-          src="https://images.wallpaperscraft.com/image/single/motorcycle_black_dark_166770_1920x1080.jpg"
+          src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHkt8PwJRbLnpQB0UXfrMvZtulxaO6hJomP9Fb"
           alt="bike4"
           start={0}
           end={-500}

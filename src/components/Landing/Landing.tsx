@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import EncryptButton from "../ui/encrypt-button";
 import Image from "next/image";
 
 const letterVariants = {
@@ -26,15 +25,19 @@ export default function HeroSection(props: {
     setLoaded(true);
   }, []);
 
+  // Reset video states when videoUrl changes
+  useEffect(() => {
+    setVideoLoaded(false);
+    setVideoError(false);
+  }, [props.videoUrl]);
+
   return (
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       {!videoLoaded && !videoError && (
         <Image
-          src="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+          src={props.preloadImgUrl!}
           alt="motorbike"
           fill
-          blurDataURL="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
-          placeholder="blur"
         />
       )}
       <video

@@ -20,8 +20,9 @@ export default async function Ducati() {
         header="In Lightness My Strength"
         description="Ducati motorcycles blend breathtaking design, race-proven performance, and Italian soul to create a ride like no other."
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHO63Jkpaio0SnakLNxV8hfWQd7MlczgTv954J"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        videoUrl={motorcyclesList[Math.floor(Math.random() * motorcyclesList.length)]?.videoUrl}
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+
       />
 
       <InfiniteText

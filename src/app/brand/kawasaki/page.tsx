@@ -20,7 +20,7 @@ export default async function Kawasaki() {
         header="Let the Good Times Roll"
         description="Kawasaki motorcycles are built for thrill-seekers who crave raw power, aggressive styling, and high-performance dominance on any road."
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHFk9f7IPN0SOvwsxAjZ9YmJW5dhXPL4akBHf2"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        videoUrl={motorcyclesList[Math.floor(Math.random() * motorcyclesList.length)]?.videoUrl}
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
       />
 

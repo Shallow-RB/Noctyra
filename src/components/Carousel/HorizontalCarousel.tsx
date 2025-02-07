@@ -61,13 +61,6 @@ const Card = ({ card }: { card: CardType }) => {
         }}
         className="absolute inset-0 z-0 bg-transparent transition-transform duration-300 scale-75 group-hover:scale-90 saturate-0   hover:saturate-100 backdrop-blur-2xl  hover:backdrop-blur-none"
       ></motion.div>
-
-
-      {/* <div className="absolute inset-0 z-10 grid place-content-center bg-transparent ">
-        <motion.p className="p-8 text-6xl uppercase text-white transition-opacity duration-300 group-hover:opacity-0">
-          {card.title}
-        </motion.p>
-      </div> */}
     </motion.div>
   );
 };

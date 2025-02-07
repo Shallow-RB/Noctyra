@@ -9,11 +9,11 @@ export default async function Brand() {
     <>
       <Landing
         title="BRANDS"
-        header="Our finest selection"
+        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHmArwGqK4ZU37XDiQBO8v2JYV9Kduz1GhrPIM"
+        preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHSi0iI4qBQk93YxZ0zD16lrNWeHUt4cvEfjTg"
+        header="OUR FINEST SELECTION"
         description="Explore our collection and find your perfect ride today."
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBH7U73qvfOmCi1GFTqYsZKy8IW6pBQuJrgS95w"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
-        preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBH7U73qvfOmCi1GFTqYsZKy8IW6pBQuJrgS95w"
       />
 
       <TracingBeam beamColor="#FFFFFF">
@@ -64,15 +64,15 @@ export default async function Brand() {
             brand.name.toLowerCase().replace(/\s+/g, "-"),
           )}
           descriptions={[
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  ",
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  ",
-
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+            "Yamaha motorcycles deliver a perfect balance of power and control. From the race-inspired YZF-R1 to the torque-packed MT series, every Yamaha is built for an exhilarating ride. Feel the rush—embrace the journey.",
+            "Kawasaki is all about raw power and bold design. From the supercharged Ninja H2 to the street-conquering Z series, every Kawasaki bike is engineered for riders who crave adrenaline and dominance. The thrill starts here—unleash your beast with Kawasaki.",
+            "Ducati isn’t just a machine, it’s a masterpiece. With the fierce Panigale V4, the rebellious Diavel, and the pure thrill of the Streetfighter V4, Ducati motorcycles bring passion and precision to every turn. Ride the legend, own the road.",
+            "BMW Motorrad is where innovation meets adventure. From the precision of the S 1000 RR to the endurance of the R 1250 GS, every BMW motorcycle is crafted for performance, luxury, and limitless journeys. The road is yours—embrace the ride.",
+            "Honda motorcycles are engineered for adventure, speed, and reliability. Whether you’re tearing up the track on a CBR, conquering trails with an Africa Twin, or cruising the city streets, Honda is built for riders who dream big.",
           ]}
         />
       </TracingBeam>
+
 
       <div className="h-[25vh] w-full"></div>
     </>

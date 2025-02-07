@@ -99,16 +99,16 @@ export default async function KawasakiModel({
           title={motorcycle.modelName}
           logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHFk9f7IPN0SOvwsxAjZ9YmJW5dhXPL4akBHf2"
           description={motorcycle.description}
-          videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHlmTkLZDPzqVwa71GRYC83rSodITEmi5J60OQ"
-          preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHOQ6ep7io0SnakLNxV8hfWQd7MlczgTv954JR"
+          videoUrl={motorcycle.videoUrl}
+          preloadImgUrl={motorcycle.preloadImgUrl}
         />
 
         <TracingBeam beamColor={getThemeColor(motorcycle.brandName)}>
           <div className="mx-auto w-[80%]">
             <TextReveal
-              headerText={motorcycle.modelName}
+              headerText={motorcycle.header2}
               imageUrl={motorcycle.imageUrl2!}
-              text={motorcycle.description}
+              text={motorcycle.description2}
             />
 
             <PerformanceStats
@@ -117,9 +117,9 @@ export default async function KawasakiModel({
             />
 
             <TextReveal
-              headerText={motorcycle.modelName}
+              headerText={motorcycle.header3}
               imageUrl={motorcycle.imageUrl3!}
-              text={motorcycle.description}
+              text={motorcycle.description3}
               inverted={true}
             />
 
@@ -129,9 +129,9 @@ export default async function KawasakiModel({
             />
 
             <TextReveal
-              headerText={motorcycle.modelName}
+              headerText={motorcycle.header4}
               imageUrl={motorcycle.imageUrl4!}
-              text={motorcycle.description}
+              text={motorcycle.description4}
             />
 
             <SpecificationsStats
@@ -140,9 +140,9 @@ export default async function KawasakiModel({
             />
 
             <TextReveal
-              headerText={motorcycle.modelName}
+              headerText={motorcycle.header5}
               imageUrl={motorcycle.imageUrl5!}
-              text={motorcycle.description}
+              text={motorcycle.description5}
               inverted={true}
             />
           </div>
@@ -158,7 +158,6 @@ export default async function KawasakiModel({
         <div className="mt-24 h-[100vh] w-full bg-gradient-to-b from-black to-white"></div>
         <ZoomParallax imageUrls={zoomParallaxImages} />
       </>
-
     );
   } catch (error) {
     console.error("Error fetching motorcycle data:", error);

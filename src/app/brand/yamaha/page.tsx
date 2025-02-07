@@ -20,9 +20,11 @@ export default async function Yamaha() {
         header="Revs Your Heart"
         description="Yamaha motorcycles deliver a perfect balance of power and control. From the race-inspired YZF-R1 to the torque-packed MT series, every Yamaha is built for an exhilarating ride. Feel the rush—embrace the journey."
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHZdVQ7ekYPKjxoU1M9WF7gq0yrXJH3Ds4NOeb"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        videoUrl={motorcyclesList[Math.floor(Math.random() * motorcyclesList.length)]?.videoUrl}
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
       />
+
+
 
       <InfiniteText
         inputText="YAMAHA"

@@ -20,7 +20,7 @@ export default async function BMW() {
         header="Sheer Driving Pleasure"
         description="BMW Motorrad is where innovation meets adventure. every BMW motorcycle is crafted for performance, luxury, and limitless journeys. The road is yours—embrace the ride."
         logoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHpNlP25RxZcGVh43KvCJ091ySznEOusW6a7tj"
-        videoUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
+        videoUrl={motorcyclesList[Math.floor(Math.random() * motorcyclesList.length)]?.videoUrl}
         preloadImgUrl="https://db6v27veh0.ufs.sh/f/9qjypOe04JBHELwLau0OqkQpbD2P8WGj7cw5UT3NvagxAyVX"
       />
 
