@@ -116,7 +116,6 @@ function NavLink({
   href,
   children,
   onClick,
-  index,
   delay,
 }: {
   href: string;
