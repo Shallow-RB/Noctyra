@@ -11,18 +11,21 @@ export default function StickyCursor() {
     y: useMotionValue(0),
   };
 
-  const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
+  const smoothOptions = { damping: 20, stiffness: 1000, mass: 0.1 };
 
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
     y: useSpring(mouse.y, smoothOptions),
   };
 
-  const manageMouseMove = useCallback((e: MouseEvent) => {
-    const { clientX, clientY } = e;
-    mouse.x.set(clientX - cursorSize / 2);
-    mouse.y.set(clientY - cursorSize / 2);
-  }, [cursorSize, mouse.x, mouse.y]);
+  const manageMouseMove = useCallback(
+    (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      mouse.x.set(clientX - cursorSize / 2);
+      mouse.y.set(clientY - cursorSize / 2);
+    },
+    [cursorSize, mouse.x, mouse.y],
+  );
 
   useEffect(() => {
     window.addEventListener("mousemove", manageMouseMove);
@@ -30,7 +33,6 @@ export default function StickyCursor() {
       window.removeEventListener("mousemove", manageMouseMove);
     };
   }, [manageMouseMove]);
-
 
   return (
     <motion.div
