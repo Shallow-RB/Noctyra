@@ -1,6 +1,6 @@
 # 🏍️ Noctyra – Luxury Motorcycle Dealership
 
-Welkom bij **Noctyra**: een moderne, luxe webapplicatie voor het ontdekken van high-end motorfietsen van topmerken als Yamaha, Kawasaki, BMW, Honda en Ducati. De focus ligt op een premium gebruikerservaring, rijke animaties..
+Welkom bij **Noctyra**: een moderne, luxe webapplicatie voor het ontdekken van high-end motorfietsen van topmerken als Yamaha, Kawasaki, BMW, Honda en Ducati. De focus ligt op een premium gebruikerservaring, rijke animaties.
 
 ---
 
