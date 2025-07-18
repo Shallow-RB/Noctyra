@@ -58,26 +58,35 @@ export const TextReveal = ({
             </motion.div>
             <Paragraph text={text} textColor={textColor!} />
           </div>
-          <motion.div className="w-full" style={{ opacity, translateX, clipPath }}>
+          <motion.div
+            className="flex w-full justify-center"
+            style={{ opacity, translateX, clipPath }}
+          >
             <Image
               src={imageUrl}
               ref={element}
               width={400}
               height={400}
               alt="Revealing Image"
-              className="w-full"
+              className="h-auto w-full object-contain"
             />
           </motion.div>
         </>
       ) : (
         <>
-          <motion.img
-            src={imageUrl}
-            ref={element}
-            alt="Revealing Image"
+          <motion.div
+            className="flex w-full justify-center"
             style={{ opacity, translateX, clipPath }}
-            className="w-full pr-12"
-          />
+          >
+            <Image
+              src={imageUrl}
+              ref={element}
+              width={400}
+              height={400}
+              alt="Revealing Image"
+              className="h-auto w-full object-contain pr-12"
+            />
+          </motion.div>
           <div className="w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
