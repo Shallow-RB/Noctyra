@@ -1,6 +1,6 @@
 # 🏍️ Noctyra – Luxury Motorcycle Dealership
 
-Welkom bij **Noctyra**: een moderne, luxe webapplicatie voor het ontdekken van high-end motorfietsen van topmerken als Yamaha, Kawasaki, BMW, Honda en Ducati. De focus ligt op een premium gebruikerservaring, rijke animaties en schaalbare backend-technologie.
+Welkom bij **Noctyra**: een moderne, luxe webapplicatie voor het ontdekken van high-end motorfietsen van topmerken als Yamaha, Kawasaki, BMW, Honda en Ducati. De focus ligt op een premium gebruikerservaring, rijke animaties..
 
 ---
 
@@ -21,7 +21,6 @@ Welkom bij **Noctyra**: een moderne, luxe webapplicatie voor het ontdekken van h
 - **Drizzle ORM** – Type-safe ORM voor Typescript, met declaratief schema (`src/db/schema.ts`)
 - **PostgreSQL** – Robuuste relationele database, gehost via [Neon](https://neon.tech/) (serverless Postgres)
 - **Drizzle Kit** – Database migraties, schema management en lokale development workflows
-- **.env configuratie** – Gevoelige data en connectiesleutels via environment variables
 
 ### Overige Tools
 
@@ -41,24 +40,8 @@ Welkom bij **Noctyra**: een moderne, luxe webapplicatie voor het ontdekken van h
   Parallax, text reveals, carousels en smooth scroll voor een luxe uitstraling.
 - **Database-gedreven content**  
   Motorfietsen, specs, afbeeldingen en video’s worden uit een PostgreSQL database geladen via Drizzle ORM.
-- **Responsief & mobielvriendelijk**  
-  Volledig responsive design, geoptimaliseerd voor alle schermformaten.
 - **Schaalbare architectuur**  
   Serverless database, moderne build tooling en modulaire codebase.
-
----
-
-## 🛠️ Development & Scripts
-
-```sh
-pnpm dev         # Start de development server
-pnpm build       # Build de productieversie
-pnpm lint        # Lint de codebase
-pnpm format:write # Format de codebase
-pnpm db:migrate  # Voer database migraties uit (Drizzle)
-```
-
-- Zet je database connectiesleutel in `.env` als `DATABASE_URL`
 
 ---
 
@@ -78,15 +61,6 @@ public/          # Publieke assets (media, video’s, afbeeldingen)
 
 - **Serverless ready:**  
   Dankzij Neon serverless Postgres en Next.js kan Noctyra eenvoudig worden gedeployed op platforms als Vercel, Netlify of eigen cloud infra.
-- **CI/CD:**  
-  (Optioneel) Integratie met GitHub Actions of andere CI/CD pipelines voor automatische builds en tests.
-
----
-
-## 🤝 Contributie
-
-Pull requests en feature requests zijn welkom!  
-Zorg voor duidelijke commit messages en beschrijvingen.
 
 ---
 
